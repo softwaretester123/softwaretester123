@@ -47,3 +47,50 @@ public class NextDate {
 	}
 }
 ```
+
+# Triangle 
+```
+import java.util.*;
+public class triangle {
+	
+public String check(int x,int y,int z){
+	
+	if(x<=200 && x>=1 && y<=200 && y>=1 && z<=200 && z>=1)
+	{
+		if((x+y)>z && (x+z)>y && (y+z)>x)
+		{
+			if(x==y && y==z && z==x){
+				
+				return  "Equilateral";
+			}
+			else if(x!=y && y!=z && z!=x){
+				return "Scalene";
+			}
+			
+			else{
+				return "Isosceles";
+			}
+		}
+		else{
+			return "Not a triangle";
+		}
+	}
+	else{
+		return "Not a triangle";
+	}
+
+		
+}
+public static void main(String[] Args){
+	Scanner sc=new Scanner(System.in);
+	triangle t=new triangle();
+	System.out.println("Enter the 3 sides of triangle");
+	int x=sc.nextInt();
+	int y=sc.nextInt();
+	int z=sc.nextInt();
+	System.out.println(t.check(x,y,z));
+ }
+
+}
+
+```
