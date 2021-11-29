@@ -93,3 +93,54 @@ public static void main(String[] Args){
 
 }
 ```
+
+# Triangle Test
+```
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class TriangleTest {
+	Triangle T = new Triangle();
+	@Test
+	public void test1() {
+		assertEquals(T.check(100,100,1),"Isosceles");
+	}
+	
+	@Test
+	public void test2() {
+		assertEquals(T.check(1,100,100),"Isosceles");
+	}
+	
+	@Test
+	public void test3() {
+		assertEquals(T.check(1,2,1),"Not a triangle");
+	}
+	
+	@Test
+	public void test4() {
+		assertEquals(T.check(1,2,200),"Not a triangle");
+	}
+	
+	@Test
+	public void test5() {
+		assertEquals(T.check(2,3,4),"Scalene");
+	}
+	
+	@Test
+	public void test6() {
+		assertEquals(T.check(98,99,100),"Scalene");
+	}
+	
+	@Test
+	public void test7() {
+		assertEquals(T.check(2,2,2),"Equilateral");
+	}
+	
+	@Test
+	public void test8() {
+		assertEquals(T.check(100,100,100),"Equilateral");
+	}
+	
+}
+```
