@@ -51,7 +51,7 @@ public class NextDate {
 # Triangle 
 ```
 import java.util.*;
-public class triangle {
+public class Triangle {
 	
 public String check(int x,int y,int z){
 	
@@ -83,7 +83,7 @@ public String check(int x,int y,int z){
 }
 public static void main(String[] Args){
 	Scanner sc=new Scanner(System.in);
-	triangle t=new triangle();
+	Triangle t=new Triangle();
 	System.out.println("Enter the 3 sides of triangle");
 	int x=sc.nextInt();
 	int y=sc.nextInt();
@@ -92,5 +92,4 @@ public static void main(String[] Args){
  }
 
 }
-
 ```
