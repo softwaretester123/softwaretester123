@@ -1,4 +1,4 @@
-#P3
+# P3
 ```
 
 #define _POSIX_SOURCE
@@ -23,8 +23,8 @@ int main()
 }
 }
 ```
-#P4
-###Writer
+# P4
+### Writer
 ```
 #include <stdio.h>
 #include <fcntl.h>
