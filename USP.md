@@ -66,3 +66,58 @@ int main()
   return 0;
 }
 ```
+# P5
+```
+#include <stdio.h>
+#include <sys/types.h>
+#include <unistd.h>
+#include <string.h>
+
+int main(int argc, char *argv[])
+{
+	if (argc < 3 | | argc > 4 | | (argc == 3 && (!strcmp(argv[1], ‖-s‖))))
+	{
+		printf(―Incorrect syntax
+			for link creation\ n‖);
+		return 1;
+	}
+
+	if (argc == 4)
+	{
+		if ((symlink(argv[2], argv[3])) == -1)
+			printf(―Cannot create symbolic links\ n‖);
+		else
+			printf(―Symbolic links created\ n‖);
+	}
+	else
+	{
+		if ((link(argv[1], argv[2])) == -1)
+			printf(―Cannot create hard links\ n‖);
+		else
+			printf(―Hard links created\ n‖);
+	}
+
+	return 0;
+}
+```
+
+# P6
+```
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+
+int main()
+{
+	int pid;
+	pid = fork();	//Create a child process 
+	if (pid < 0)
+	{
+		printf("Fork error\n");
+		exit(0);
+	}
+	else if (pid == 0) exit(0);	//This is the child process. Exit immediately 
+	sleep(2);	//This is the parent process. Sleep for a minute 
+	system("ps -o pid,ppid,state,tty,command");
+}
+```
