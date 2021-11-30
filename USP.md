@@ -75,26 +75,26 @@ int main()
 
 int main(int argc, char *argv[])
 {
-	if (argc < 3 | | argc > 4 | | (argc == 3 && (!strcmp(argv[1], ‖-s‖))))
+	if (argc < 3 || argc > 4 || (argc == 3 && (!strcmp(argv[1], "-s"))))
 	{
-		printf(―Incorrect syntax
-			for link creation\ n‖);
+		printf("―Incorrect syntax
+			for link creation\ n");
 		return 1;
 	}
 
 	if (argc == 4)
 	{
 		if ((symlink(argv[2], argv[3])) == -1)
-			printf(―Cannot create symbolic links\ n‖);
+			printf("―Cannot create symbolic links\ n");
 		else
-			printf(―Symbolic links created\ n‖);
+			printf("―Symbolic links created\ n");
 	}
 	else
 	{
 		if ((link(argv[1], argv[2])) == -1)
-			printf(―Cannot create hard links\ n‖);
+			printf("―Cannot create hard links\ n");
 		else
-			printf(―Hard links created\ n‖);
+			printf("―Hard links created\ n");
 	}
 
 	return 0;
