@@ -120,7 +120,7 @@ public class NextDate {
 	}
 	
 	public String nextDay(int d, int m, int y) {
-		if (d >= 1 && d <= 31 && m >= 1 && m <= 12 && y >= 1819 && y <= 2019) {
+		if (d >= 1 && d <= 31 && m >= 1 && m <= 12 && y >= 1812 && y <= 2012) {
 			switch(m) {
 			case 1:
 			case 3:
