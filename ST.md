@@ -116,7 +116,7 @@ public class NextDate {
 		} else {
 			return "Invalid Date";
 		}
-		return String.valueOf(d)+"-"+String.valueOf(m)+"-"+String.valueOf(y);
+		return ""+d+"-"+m+"-"+y+"";
 	}
 	
 	public String nextDay(int d, int m, int y) {
