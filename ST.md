@@ -13,6 +13,7 @@ class Check {
             return 0;
         }
     }
+
     int checkAccountType(int accountType) {
         if (accountType == 1) {
             System.out.println("Opened Savings Account.");
@@ -25,9 +26,11 @@ class Check {
             return 0;
         }
     }
+
     void checkBalance(int balance) {
         System.out.println("Your Account Balance: " + balance);
     }
+
     int withdraw(int balance, int amount) {
         if (amount < 0) {
             System.out.println("Invalid Amount.");
@@ -41,10 +44,10 @@ class Check {
         }
         return balance;
     }
+
     int deposit(int balance, int amount) {
         if (amount < 0) {
             System.out.println("Invalid Amount.");
-
         } else {
             balance = balance + amount;
             System.out.println("Deposit Successful.");
@@ -67,6 +70,10 @@ public class ATM {
             }
             System.out.println("Invalid PIN.");
             k++;
+        }
+        if(k == 3){
+            System.out.println("Too many incorrect PIN attempts.");
+            System.exit(0);
         }
         while (r == 0) {
             System.out.println("Enter Account Type:\n1. Savings\n2. Current\n");
