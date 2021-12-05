@@ -100,7 +100,7 @@ public class ATM {
 }
 ```
 
-# NEXT DATE
+# Next Date
 ```
 public class NextDate {
 	public static String next(int d, int m, int y, int cc) {
