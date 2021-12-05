@@ -1,3 +1,105 @@
+# ATM
+
+```
+package ATM;
+
+import java.util.Scanner;
+
+class Check {
+    int checkPin(int enteredPin, int correctPin) {
+        if (enteredPin == correctPin) {
+            return 1;
+        } else {
+            return 0;
+        }
+    }
+    int checkAccountType(int accountType) {
+        if (accountType == 1) {
+            System.out.println("Opened Savings Account.");
+            return 1;
+        } else if (accountType == 2) {
+            System.out.println("Opened Current Account.");
+            return 1;
+        } else {
+            System.out.println("Invalid Account Type.");
+            return 0;
+        }
+    }
+    void checkBalance(int balance) {
+        System.out.println("Your Account Balance: " + balance);
+    }
+    int withdraw(int balance, int amount) {
+        if (amount < 0) {
+            System.out.println("Invalid Amount.");
+        }
+        if (amount > balance) {
+            System.out.println("Insufficient Funds.");
+        } else {
+            balance = balance - amount;
+            System.out.println("Withdrawal Successful.");
+            checkBalance(balance);
+        }
+        return balance;
+    }
+    int deposit(int balance, int amount) {
+        if (amount < 0) {
+            System.out.println("Invalid Amount.");
+
+        } else {
+            balance = balance + amount;
+            System.out.println("Deposit Successful.");
+            checkBalance(balance);
+        }
+        return balance;
+    }
+}
+
+public class ATM {
+    public static void main(String[] args) {
+        int pin = 5555, balance = 10000, k = 0, r = 0;
+        Check C = new Check();
+        Scanner sc = new Scanner(System.in);
+        while (k < 3) {
+            System.out.println("Enter your PIN: ");
+            if (C.checkPin(sc.nextInt(), pin) == 1) {
+                System.out.println("Welcome to the ATM.");
+                break;
+            }
+            System.out.println("Invalid PIN.");
+            k++;
+        }
+        while (r == 0) {
+            System.out.println("Enter Account Type:\n1. Savings\n2. Current\n");
+            r = C.checkAccountType(sc.nextInt());
+        }
+        int trans = 0;
+        while (trans != 4) {
+            System.out.println("Enter the operation:\n1. Check Balance\n2. Withdraw\n3. Deposit\n4. Exit");
+            trans = sc.nextInt();
+            switch (trans) {
+                case 1:
+                    C.checkBalance(balance);
+                    break;
+                case 2:
+                    System.out.println("Enter the amount to withdraw: ");
+                    balance = C.withdraw(balance, sc.nextInt());
+                    break;
+                case 3:
+                    System.out.println("Enter the amount to deposit: ");
+                    balance = C.deposit(balance, sc.nextInt());
+                    break;
+                case 4:
+                    System.out.println("Thank you for using the ATM.");
+                    System.exit(0);
+                    break;
+                default:
+                    System.out.println("Invalid Input.");
+            }
+        }
+    }
+}
+```
+
 # NEXT DATE
 ```
 public class NextDate {
